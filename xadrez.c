@@ -9,7 +9,9 @@ int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
-    int i;
+    int i, j; 
+
+
     printf("Movimento da Torre:\n");
     for (i = 0; i < 5; i++) {
         printf("Frente\n");
@@ -29,7 +31,20 @@ int main() {
         i++;
     } while (i < 8);
 
+
+// --- 4. CAVALO (LOOPS ANINHADOS) ---
+    printf("\nMovimento do Cavalo:\n");
+   
+    for (i = 0; i < 1; i++) {
+        
+        j = 0; 
+        while (j < 2) {
+            printf("Baixo\n");
+            j++;
+        }
+
+        printf("Esquerda\n");
+    }
+
     return 0;
 }
-
-
