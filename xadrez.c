@@ -32,7 +32,6 @@ int main() {
     } while (i < 8);
 
 
-// --- 4. CAVALO (LOOPS ANINHADOS) ---
     printf("\nMovimento do Cavalo:\n");
    
     for (i = 0; i < 1; i++) {
