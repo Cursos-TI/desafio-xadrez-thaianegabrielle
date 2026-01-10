@@ -1,49 +1,85 @@
 #include <stdio.h>
 
 // Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+
+void moverTorre(int movimentos);
+void moverRainha(int movimentos);
+void moverBispo(int movimentos);
+
 int main() {
-
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-
-    int i, j; 
-
+    int passosTorre = 5;
+    int passosBispo = 5;
+    int passosRainha = 8;
 
     printf("Movimento da Torre:\n");
-    for (i = 0; i < 5; i++) {
-        printf("Frente\n");
-    }
+    moverTorre(passosTorre); 
+    printf("\n");
 
-    printf("\nMovimento do Bispo:\n");
-    i = 0; 
-    while (i < 5) {
-        printf("Cima, Direita\n");
-        i++;
-    }
+    printf("Movimento do Bispo:\n");
+    moverBispo(passosBispo);
+    printf("\n");
 
-    printf("\nMovimento da Rainha:\n");
-    i = 0;
-    do {
-        printf("Esquerda\n");
-        i++;
-    } while (i < 8);
+    printf("Movimento da Rainha:\n");
+    moverRainha(passosRainha);
+    printf("\n");
 
-
-    printf("\nMovimento do Cavalo:\n");
-   
-    for (i = 0; i < 1; i++) {
+    printf("Movimento do Cavalo:\n");
+    
+    for (int i = 0, j = 0; i < 1; i++) { 
         
-        j = 0; 
-        while (j < 2) {
-            printf("Baixo\n");
-            j++;
-        }
+        while (j < 3) { 
+            
+            if (j < 2) {
+                printf("Cima\n");
+                j++; 
+                continue; 
+            }
 
-        printf("Esquerda\n");
+            if (j == 2) {
+                printf("Direita\n");
+                j++;
+                break;
+            }
+        }
     }
 
     return 0;
+}
+
+
+void moverTorre(int n) {
+    if (n > 0) {
+        printf("Cima\n"); 
+        moverTorre(n - 1);   
+    }
+}
+
+
+void moverRainha(int n) {
+    if (n > 0) {
+        printf("Esquerda\n");
+        moverRainha(n - 1); 
+    }
+}
+
+void moverBispo(int n) {
+    if (n > 0) {
+    
+        
+        int v = 0;
+        while(v < 1) { 
+            printf("Cima, ");
+            
+            int h = 0;
+            while(h < 1) { 
+                printf("Direita\n");
+                h++;
+            }
+            v++;
+        }
+        
+        moverBispo(n - 1); 
+    }
 }
